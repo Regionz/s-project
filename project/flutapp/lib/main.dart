@@ -87,27 +87,6 @@ class HomePage extends StatelessWidget {
             ),
 
               const SizedBox(height: 200),
-
-             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    color: Color.fromARGB(255, 235, 2, 2),
-                    child: Text('Red'),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    color: Color.fromARGB(255, 32, 148, 35),
-                    child: Text('Green'),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    color: Color.fromARGB(255, 204, 122, 0),
-                    child: Text('Orange'),
-                  ),
-                ],
-              ),
           ],
         ),
       ),
