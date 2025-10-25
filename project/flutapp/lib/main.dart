@@ -87,6 +87,20 @@ class HomePage extends StatelessWidget {
             ),
 
               const SizedBox(height: 200),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(25),
+                    child: Text('Empty Container'),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 160, 160, 160),
+                      borderRadius: BorderRadius.circular(15)
+                    )
+                  )
+                ]
+                )
           ],
         ),
       ),
