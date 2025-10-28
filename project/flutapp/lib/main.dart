@@ -92,10 +92,13 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
+                    width: 400,
+                    height: 200,
                     padding: EdgeInsets.all(25),
-                    child: Text('Empty Container'),
+                    child: Text('Container'),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 160, 160, 160),
+                      image: DecorationImage(image: 
+                      Image.network('https://storage.googleapis.com/pod_public/1300/227002.jpg').image, fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(15)
                     )
                   )
