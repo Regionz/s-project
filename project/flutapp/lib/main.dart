@@ -98,7 +98,7 @@ class HomePage extends StatelessWidget {
                     child: Text('Container'),
                     decoration: BoxDecoration(
                       image: DecorationImage(image: 
-                      Image.network('https://storage.googleapis.com/pod_public/1300/227002.jpg').image, fit: BoxFit.cover),
+                      Image.network('assets/images/abstract.jpg').image, fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(15)
                     )
                   )
