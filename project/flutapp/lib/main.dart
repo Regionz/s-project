@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Navigator Demo',
+      title: 'S-project',
       theme: ThemeData(
         colorSchemeSeed: Colors.indigo,
         useMaterial3: true,
@@ -46,23 +46,6 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Нажми на кнопку!',
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 20),
-
-            // Кнопка перехода на страницу со счётчиком
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/counter');
-              },
-              child: const Text('Счётчик'),
-            ),
-
-            const SizedBox(height: 20),
-
-            // Кнопка, которая пушит этот же экран заново
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -70,12 +53,22 @@ class HomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const HomePage()),
                 );
               },
-              child: const Text('Открыть тот же экран'),
+              child: const Icon(Icons.radio_button_unchecked),
             ),
-
+            const SizedBox(height: 100),
+            const Text(
+              'Нажми на кнопку!',
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 20),
-
-            // Новая кнопка, которая открывает CardScreen через Navigator.push
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/counter');
+              },
+              child: const Text('Счётчик'),
+            ),
+            const SizedBox(height: 20),
+            
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -85,27 +78,45 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Открыть карточку'),
             ),
-
-              const SizedBox(height: 200),
-
+            const SizedBox(height: 200),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    width: 400,
-                    height: 200,
-                    padding: EdgeInsets.all(25),
-                    child: Text('Container'),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(image: 
-                      Image.network('assets/images/abstract.jpg').image, fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(15)
-                    )
-                  )
-                ]
-                )
+              children: [
+                Container(
+                  width: 400,
+                  height: 200,
+                  padding: const EdgeInsets.all(25),
+                  child: const Text('Container'),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: Image.network('assets/images/abstract.jpg').image,
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
+      ),
+
+      // Navigation:
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.archive),
+            label: 'Archive',
+          ),
+        ],
       ),
     );
   }
